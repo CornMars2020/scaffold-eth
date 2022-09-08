@@ -293,6 +293,9 @@ function App(props) {
         <Menu.Item key="/debug">
           <Link to="/debug">Debug Contracts</Link>
         </Menu.Item>
+        <Menu.Item key="/cpmm2">
+          <Link to="/cpmm2">Debug CPMM2</Link>
+        </Menu.Item>
         <Menu.Item key="/hints">
           <Link to="/hints">Hints</Link>
         </Menu.Item>
@@ -324,10 +327,21 @@ function App(props) {
             price={price}
             signer={userSigner}
             provider={localProvider}
-            address={address}
+            // address={address}
             blockExplorer={blockExplorer}
             contractConfig={contractConfig}
           />
+        </Route>
+        <Route exact path="/cpmm2">
+          <Contract
+            name="CPMM2"
+            contractConfig={contractConfig}
+            price={price}
+            signer={userSigner}
+            provider={localProvider}
+            // address={address}
+            blockExplorer={blockExplorer}
+          ></Contract>
         </Route>
         <Route path="/hints">
           <Hints
